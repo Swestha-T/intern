@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="first" style="background-color: black; color: yellow;">Hello World</h1>
+    <h1 class="second" style="background-color: black; color: yellow;">Hello World</h1>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <script>
+
+
+        // //get  element by class name
+        // let heading = document.getElementsByClassName("first");
+        // heading[0].innerHTML = "this is my heading of dom";
+        // heading[0].style.backgroundColor = "black";
+
+        // //get element by tag name
+        // heading=document.querySelector("h1");
+        // heading[0].innerHTML = "this is my heading of dom";
+
+        // //accessing elements by query selector
+        // let heading=document.querySelector("h1");
+        // heading.style.backgroundColor = "black";
+
+        //query selector all
+        let heading1=document.querySelectorAll("h1");
+        heading1[0].innerHTML = "this is my second heading of dom";
+        heading1[0].style.backgroundColor = "black";
+
+        // const h1 = document.getElementById("first");
+        // h1.style.backgroundColor = "black";
+        // h1.style.color = "yellow";
+        // h1.style.fontSize = "50px";
+        // h1.style.textAlign = "center";
+
+        let paragraph = document.querySelector("p");
+        for(let i=0; i<paragraph.length; i++){
+            paragraph[i].style.backgroundColor = "lightgray";
+            paragraph[i].innerHTML = "this is my paragraph of dom";
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- dom(document object model) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+javascript uses dom to change the text, change colors, add html elements, remove elements read input values, and more. The DOM is not part of the JavaScript language, but it is a web standard that allows JavaScript to access and manipulate web pages.
+
+common methods to access html elements are -->
+
+
+//use image tag and use dom to put another image in the html page
+let img = document.createElement("img");

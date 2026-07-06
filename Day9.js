@@ -53,6 +53,6 @@ let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // console.log(nummm); //logs the sum of all numbers in the array
 
 let totalnumber=number.reduce(function(total, num){
-    return total + num;
-}, 22);
+    return total + num; //0+1=1, 1+2=3, 3+3=6, 6+4=10, 10+5=15, 15+6=21, 21+7=28, 28+8=36, 36+9=45, 45+10=55
+}, 0); //initial value of total is 0 and it adds each number in the array to total
 console.log(totalnumber); //logs the sum of all numbers in the array
