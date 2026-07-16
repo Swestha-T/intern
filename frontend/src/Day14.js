@@ -97,7 +97,7 @@
 //  //useContext
 // it hepls to share data between components without passing props manually through every level or components (avoids "props drilling")
 
-// App(usrname="Rahul")
+// App(usrname="swestha")
 // Navbar()
 // Menu()
 // Profiel()
@@ -116,6 +116,11 @@
 //  //useMemo
 //  //useRef
 
+ //App()----Navbar()----Menu()-----prof()
+
+
+
+ /// using fetch api 
 
 
 

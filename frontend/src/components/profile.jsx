@@ -1,13 +1,33 @@
+// import React, { useContext } from 'react'
+// import UserContext from '../context/userContext'
+
+// const Profile = () => {
+//     const user =useContext(UserContext)
+//   return (
+//     <div>
+//         <h1> welcome {user}</h1>
+      
+//     </div>
+//   )
+// }
+
+// export default Profile
+
+
+
+
+
 import React, { useContext } from 'react'
 import UserContext from '../context/userContext'
 
+
 const Profile = () => {
-    const user =useContext(UserContext)
+  const age =useContext(UserContext)
   return (
-    <div>
-        <h1> welcome {user}</h1>
+    <>
+<h1>MY age is {age}</h1>
       
-    </div>
+    </>
   )
 }
 
