@@ -99,7 +99,7 @@
 // import Navbar from './components/Navbar.jsx'
 
 // const App = () => {
-//   const name="swestha"
+//   const name="Rahul"
 //   return (
 //     <UserContext.Provider  value={name} >
 //       <Navbar />
@@ -112,13 +112,12 @@
 // export default App
 
 
-
 // import React from 'react'
 // import UserContext from './context/userContext'
 // import Navbar from './components/Navbar.jsx'
 
 // const App = () => {
-//   const age=21;
+//   const age=22;
 //   return (
 //     <>
 //     <UserContext.Provider   value={age} >
@@ -130,8 +129,6 @@
 //     </>
 //   )
 // }
-
-
 
 // export default App
 
@@ -146,9 +143,13 @@
 //   )
 // }
 
+// export default App
+
+
+
+
 
 ///UserContext makes the user avalibale to every componenet inside 
-
 
 
 
@@ -239,7 +240,139 @@
 // export default App
 
 
-// {/* const arr =[0,1,2,3,4] */}
+{/* const arr =[0,1,2,3,4] */}
 
 
- 
+  //assignmnet  todays /// fetch api use gareraa crud operation perform garne
+
+
+
+// even handling using  onClick event
+
+
+  // import React from 'react'
+  
+  // const App = () => {
+  //   const handleClick = function(){
+  //     alert(" button clicked")
+
+  //   }
+
+  //   return (
+  //     <>
+  //     <button onClick={handleClick} >click me</button>
+        
+  //     </>
+  //   )
+  // }
+  
+  // export default App
+  
+
+
+  ///  onChange and onSubmit event
+
+
+//   import React, {useState} from 'react'
+  
+//   const App = () => {
+//     const [name, setName]= useState('')
+//     const [email, setEmail]= useState("")
+//     const [password,setPassword]=useState("")
+
+
+//     function handleSubmitform(e){
+//       e.preventDefault();// its don't want the page to reload in react applications
+//       alert("form successfully submitted!")
+
+
+//     }
+
+//     return (
+//       <>
+
+//       <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+//   <form onSubmit={handleSubmitform} className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8 space-y-5">
+
+//     <h2 className="text-3xl font-bold text-center text-gray-800">
+//       Register Form
+//     </h2>
+
+//     <div>
+//       <label className="block text-sm font-medium text-gray-700 mb-2">
+//         Full Name
+//       </label>
+//       <input
+//       onChange={(e)=> setName(e.target.value)}
+//         type="text"
+//         placeholder="Enter your name"
+//         value={name}
+//         className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+//       />
+//     </div>
+
+//     <div>
+//       <label className="block text-sm font-medium text-gray-700 mb-2">
+//         Email Address
+//       </label>
+//       <input
+//       onChange={(e)=> setEmail(e.target.value)}
+//         type="email"
+//         placeholder="Enter your email"
+//         value={email}
+//         className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+//       />
+//     </div>
+
+//     <div>
+//       <label className="block text-sm font-medium text-gray-700 mb-2">
+//         Password
+//       </label>
+//       <input
+//       onChange={(e)=> setPassword(e.target.value)}
+//         type="password"
+//         value={password}
+//         placeholder="Enter your password"
+//         className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+//       />
+//     </div>
+
+//     <button
+//       type="submit"
+//       className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+//     >
+//       Submit Form
+//     </button>
+
+//   </form>
+  
+// </div>
+        
+//       </>
+//     )
+//   }
+  
+//   export default App
+
+
+
+import React from 'react'
+import AppRoute from './routes/AppRoute'
+// import { Outlet } from 'react-router-dom'
+
+const App = () => {
+  return (
+    <>
+    <AppRoute />
+     
+      
+    </>
+  )
+}
+
+export default App
+
+  
+
+
+
