@@ -99,7 +99,7 @@
 // import Navbar from './components/Navbar.jsx'
 
 // const App = () => {
-//   const name="Rahul"
+//   const name="Swestha"
 //   return (
 //     <UserContext.Provider  value={name} >
 //       <Navbar />
@@ -117,7 +117,7 @@
 // import Navbar from './components/Navbar.jsx'
 
 // const App = () => {
-//   const age=22;
+//   const age=21;
 //   return (
 //     <>
 //     <UserContext.Provider   value={age} >
@@ -356,14 +356,58 @@
 
 
 
-import React from 'react'
+import React, { useState } from 'react'
 import AppRoute from './routes/AppRoute'
+import { createProducts, deleteProduct, getProducts, updateProducts } from './services/productService'
+import ProductForm from './components/ProductForm'
+import ProductList from './components/ProductList'
 // import { Outlet } from 'react-router-dom'
 
 const App = () => {
+  const [products,setProducts]=useState([])
+  const [editingProduct, setEditingProduct]=useState(null)
+
+  const fetchProducts = async ()=>{
+      const response = await getProducts()
+      setProducts(response.data)
+    }
+
+    useEffect(()=>{
+      fetchProducts();
+    },[])
+
+
+
+    /// product add
+    const addProduct= async(product)=>{
+      await createProducts(product)
+      fetchProducts();
+    }
+
+    // update the existing product
+    const updateExisting=async (IdleDeadline,product)=>{
+      await updateProducts(id , product)
+      setEditingProduct(null)
+      fetchProducts()
+      
+    }
+
+    /// remove product
+
+    const removeProduct= async (id)=>{
+      await deleteProduct(id)
+      fetchProducts();
+    }
   return (
     <>
-    <AppRoute />
+    
+    <h1>product crud operation using axios</h1>
+    <ProductForm  addProduct={addProduct} editingProduct={editingProduct} updateProducts={updateExisting} />
+    <ProductList   products={products}  onDelete={removeProduct} onEdit={setEditingProduct} />
+
+
+    
+    {/* <AppRoute /> */}
      
       
     </>
@@ -372,7 +416,76 @@ const App = () => {
 
 export default App
 
+
+
+
   
+// import React, { useEffect } from 'react'
+// import axios from "axios"
+// // get requests
+
+
+// const App = () => {
+
+//   // get requests
+//   // axios.get("https://jsonplaceholder.typicode.com/posts")
+//   // .then(response)=>{
+//   //   console.log((response.data)
+//   // })
+//   // .catch(error)=>{
+//   //   console.log(error)
+//   // }
+//   // )
+
+//   useEffect(()=>{
+
+//     axios.get("https://jsonplaceholder.typicode.com/posts")
+//     .then((response)=>{
+//       console.log(response.data)
+
+//     })
+//     .catch((error)=>{
+//       console.log(error)
+//     })
+
+//   },[])
+//   // post method 
+//   axios.post("https://jsonplaceholder.typicode.com/posts",{
+//     title:"react",
+//     body:"axios exmaple peorfoming in react",
+//     userId:1
+//   })
+//   .then((response)=>{
+//     console.log(response.data)
+//   })
+
+//   ///put(update)
+
+//   axios.put("https://jsonplaceholder.typicode.com/posts/1",{
+//     title:"next js ",
+//     body:"axios exmaple peorfoming in  nextjs",
+//     userId:1
+//   })
+//   .then((response)=>{
+//     console.log(response.data)
+//   })
+
+//   axios.delete("https://jsonplaceholder.typicode.com/posts/1")
+//  .then((response)=>{
+//    console.log("deleted data")
+//  })
+
+
+//   return (
+//     <>
+//       // crud operation using axios
+//       <h1>didnt get data</h1>
+
+//     </>
+//   )
+// }
+
+// export default App
 
 
 
